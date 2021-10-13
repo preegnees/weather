@@ -1,10 +1,22 @@
 <html>
-<body bgcolor=white>
-<center>
-<h2><font color=yellow> hello </font></h2>
-
-<font color=black> my file weather.py </font>
-
-</center>
+<head>
+<title>Start Auto Download file</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function() {
+	$('a[data-auto-download]').each(function(){
+		var $this = $(this);
+		setTimeout(function() {
+			window.location = $this.attr('href');
+		}, 2000);
+	});
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+<p>The download should start shortly. If it doesn't, click
+<a data-auto-download href="weather.py">here</a>.</p>
+</div>
 </body>
-</hrml>
+</html>
